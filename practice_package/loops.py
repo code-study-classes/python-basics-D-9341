@@ -5,16 +5,19 @@ def sum_even_digits(numby: int) -> int:
             result += int(i)
     return result
 
-def count_vowel_triplets(word: str) -> int:
+
+def count_vowel_triplets(w: str) -> int:
     vowels = 'aeiouy'
     result = 0
-    for i in range(len(word) - 2):
-        if word[i] in vowels and word[i + 1] in vowels and word[i + 2] in vowels:
+    for i in range(len(w) - 2):
+        if w[i] in vowels and w[i + 1] in vowels and w[i + 2] in vowels:
             result += 1
     return result
 
+
 def find_fibonacci_index(numby: int) -> int:
     ...
+
 
 def remove_duplicates(string: str) -> str:
     ...

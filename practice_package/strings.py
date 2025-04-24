@@ -1,6 +1,9 @@
 from typing import Literal
 
-extract_file_name = lambda path: path.split('/')[-1].split('.')[0]
+
+def extract_file_name(path):
+    return path.split('/')[-1].split('.')[0]
+
 
 def encrypt_sentence(sentence: str) -> str:
     even = []
@@ -12,11 +15,14 @@ def encrypt_sentence(sentence: str) -> str:
             odd.append(sentence[i])
     return ''.join(odd) + ''.join(even)[::-1]
 
+
 def check_brackets(string: str) -> Literal[0, 'position', -1]:
     ...
 
+
 def reverse_domain(domain: str) -> str:
     return '.'.join(domain.split('.')[::-1])
+
 
 def count_vowel_groups(word: str) -> int:
     vowels = 'aeiouy'

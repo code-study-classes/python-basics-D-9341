@@ -5,6 +5,7 @@ def count_char_occurrences(text: str) -> dict:
             result[i] = result.get(i, 0) + 1
     return result
 
+
 def merge_dicts(d1: dict, d2: dict, resolver: callable) -> dict:
     result = d1.copy()
     for k, v in d2.items():
@@ -14,11 +15,17 @@ def merge_dicts(d1: dict, d2: dict, resolver: callable) -> dict:
             result[k] = v
     return result
 
-def invert_dictionary(d: dict) -> dict:
-    return {v: k for k, v in d.items()}
+
+def invert_dictionary(d: dict) -> dict[str | int, list]:
+    result = {v: [] for _, v in d.items()}
+    for k, v in d.items():
+        result[v].append(k)
+    return result
+
 
 def dict_to_table(data: dict, columns: list) -> str:
     ...
+
 
 def deep_update(base_dict: dict, update_dict: dict) -> dict:
     ...
